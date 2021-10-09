@@ -8,13 +8,23 @@ header {
 .daily_info {
     padding: 20px;
     background-color: chocolate;
+ 
 }
+.nav_bar{
+     display: none;
+}  
 main {
+    
     padding: 20px;
     background-color: cornflowerblue;
 }
 article {
+
     background-color: darkorange;
+}
+.title_main_news{
+    
+    border: solid;
 }
 .more_news_container {
     border: solid;
@@ -26,3 +36,26 @@ footer {
     padding: 20px;
     background-color: darkkhaki;
 }
+@media only screen and (min-width: 768px) {
+   article {
+       display: flex;
+       flex-direction: row-reverse;
+    }
+    .img {
+       width: 65%;
+    }
+    .more_news_container {
+        display: flex;
+        justify-content: space-between;
+    } 
+    .nav_bar {
+        
+        display: inline;
+        display: flex;
+        justify-content:space-around;
+        background-color: grey;
+       
+
+    }  
+
+    }

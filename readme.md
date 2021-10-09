@@ -1,8 +1,8 @@
 # Become a Software Developer 🚀
 
-## Problemática semanal 04 correction
+## Problemática semanal 04 corrections
 
-- corrections semana 03
+- corrections week 03
 
 ## Author 🖋️
 
