@@ -1,0 +1,28 @@
+header {
+    padding: 20px;
+    background-color: blueviolet;
+    position:sticky;
+    top: 0%;
+   
+}
+.daily_info {
+    padding: 20px;
+    background-color: chocolate;
+}
+main {
+    padding: 20px;
+    background-color: cornflowerblue;
+}
+article {
+    background-color: darkorange;
+}
+.more_news_container {
+    border: solid;
+}
+.more_news {
+ background-color: deeppink;
+}
+footer {
+    padding: 20px;
+    background-color: darkkhaki;
+}
