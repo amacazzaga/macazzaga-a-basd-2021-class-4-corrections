@@ -1,8 +1,16 @@
 img {
      height: auto;
-    width: 100%;
+     width: 100%;
 }
 .img_dkt {
+    height: auto;
+    width: 100%;
+}
+.menu_hamb {
+    height: auto;
+    width: 100%
+}
+.lupa {
     height: auto;
     width: 100%;
 }

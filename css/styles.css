@@ -12,12 +12,22 @@ header {
 .header_logo {
     text-decoration: none;
     justify-content: center;
+    font-size: xx-large;
+    font-weight: bolder;
+    color: black;
     }
 .desktop_title {
     display: none;
+    font-size: xx-large;
+    color: black;
+    font-weight: bolder;
 }
 a {
     text-decoration: none;
+    color: black;
+    }
+    .title {
+        font-size: xx-large;
     }
 .lupa_login {
     display: flex;
@@ -27,7 +37,21 @@ a {
 button {
     display: flex;
     align-items: space-beetwen;
-    border: solid;
+    border: solid; 
+    
+}
+.buttonBurguer {
+    
+    height: 50px;
+    width: 50px;
+}
+.lupaButton{
+    height:60px;
+    width: 50px;
+}
+.loginButton {
+    height: 60px;
+    width: 50px;
 }
 .daily_info {
     display: flex;
@@ -60,6 +84,8 @@ article {
 }
 .more_news {
  background-color: deeppink;
+ font-weight: bold;
+ font-size: large;
 }
 
 footer {
@@ -82,12 +108,11 @@ footer {
         display: flex;
      justify-content:center;
      background-color: cornflowerblue
-     }  
-   
+     }   
     li {
         display: flex;
         list-style: none;
-        background-color: blue;
+        background-color: rgb(217, 217, 235);
         padding-right: 20px;
         border: solid;
         margin-right: 10px;
@@ -96,15 +121,14 @@ footer {
     @media only screen and (min-width: 1200px){
         main {
             padding: 40px;
+          
         }
         .main_news {
             display: flex;
             flex-direction: row-reverse;
            }
         .title_main_news{
-            display: flex;
-            float: left;
-           width: 33%;
+            width: 33%;
             padding: 5px;
          }
       
