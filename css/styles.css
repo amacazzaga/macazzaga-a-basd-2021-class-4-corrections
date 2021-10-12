@@ -10,9 +10,10 @@ header {
    display: none;
 }
 .header_logo {
+    display: flex;
     text-decoration: none;
     justify-content: center;
-    font-size: xx-large;
+    font-size: large;
     font-weight: bolder;
     color: black;
     }
@@ -26,9 +27,7 @@ a {
     text-decoration: none;
     color: black;
     }
-    .title {
-        font-size: xx-large;
-    }
+    
 .lupa_login {
     display: flex;
     justify-content: right;
@@ -37,11 +36,9 @@ a {
 button {
     display: flex;
     align-items: space-beetwen;
-    border: solid; 
-    
+    border: solid;  
 }
-.buttonBurguer {
-    
+.buttonBurguer {  
     height: 50px;
     width: 50px;
 }
