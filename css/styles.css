@@ -2,18 +2,17 @@ header {
     display: flex;
     padding: 20px;
     background-color: blueviolet;
+    justify-content: space-between;
     position:sticky;
     top: 0%;
-     justify-content: space-between;
+     
    }
 .nav_header {
    display: none;
 }
 .header_logo {
-    display: flex;
-    text-decoration: none;
-    justify-content: center;
-    font-size: large;
+    text-decoration: none;   
+    font-size: xx-large;
     font-weight: bolder;
     color: black;
     }
@@ -24,21 +23,22 @@ header {
     font-weight: bolder;
 }
 a {
+    
     text-decoration: none;
     color: black;
     }
     
 .lupa_login {
     display: flex;
-    justify-content: right;
     background-color: white;
    }
 button {
     display: flex;
-    align-items: space-beetwen;
+    
     border: solid;  
 }
 .buttonBurguer {  
+    display: flex;
     height: 50px;
     width: 50px;
 }
