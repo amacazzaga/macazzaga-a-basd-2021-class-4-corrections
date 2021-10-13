@@ -116,6 +116,9 @@ footer {
          }
    }
     @media only screen and (min-width: 1200px){
+        header{
+            position: static;
+        }
         main {
             padding: 40px;
           
