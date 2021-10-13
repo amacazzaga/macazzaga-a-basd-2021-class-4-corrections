@@ -7,10 +7,12 @@ img {
     width: 100%;
 }
 .menu_hamb {
+    align-self: center;
     height: auto;
-    width: 100%
+    width: 100%;
 }
 .lupa {
+    align-self: center;
     height: auto;
     width: 100%;
 }

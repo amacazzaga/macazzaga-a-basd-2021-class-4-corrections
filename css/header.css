@@ -4,17 +4,16 @@ header {
     background-color: blueviolet;
     justify-content: space-between;
     position:sticky;
-    top: 0%;
-     
+    top: 0%;    
    }
 .nav_header {
-   display: none;
+    display: none;
 }
 .header_logo {
     display: flex;
     text-align: center;
     text-decoration: none;   
-    font-size: 100%;
+    font-size: large;
     font-weight: bolder;
     color: black;
     }
@@ -24,29 +23,30 @@ header {
     color: black;
     font-weight: bolder;
 }
+
 a {
-      text-decoration: none;
+    text-decoration: none;
     color: black;
-    }
-    
+}  
 .lupa_login {
     display: flex;
     background-color: white;
-   }
+}
 button {
     display: flex;   
     border: solid;  
 }
 .buttonBurguer {  
     display: flex;
-    height: 50px;
+    height: 60px;
     width: 50px;
 }
-.lupaButton{
+.lupaButton {
     height:60px;
     width: 50px;
 }
 .loginButton {
+    align-self: center;
     height: 60px;
     width: 50px;
 }
