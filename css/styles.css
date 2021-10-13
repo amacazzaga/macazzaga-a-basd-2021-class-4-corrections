@@ -11,8 +11,10 @@ header {
    display: none;
 }
 .header_logo {
+    display: flex;
+    text-align: center;
     text-decoration: none;   
-    font-size: xx-large;
+    font-size: 100%;
     font-weight: bolder;
     color: black;
     }
@@ -23,8 +25,7 @@ header {
     font-weight: bolder;
 }
 a {
-    
-    text-decoration: none;
+      text-decoration: none;
     color: black;
     }
     
@@ -33,8 +34,7 @@ a {
     background-color: white;
    }
 button {
-    display: flex;
-    
+    display: flex;   
     border: solid;  
 }
 .buttonBurguer {  
@@ -67,12 +67,10 @@ main {
 article {
    background-color: darkorange;
 }
-
 .main_news {
     display: flex;
     flex-direction: column;
 }
-
 .desktop_img {
     display: none;
 }
@@ -84,12 +82,14 @@ article {
  font-weight: bold;
  font-size: large;
 }
-
 footer {
     padding: 20px;
     background-color: darkkhaki;
 }
 @media only screen and (min-width: 720px) {
+    .header_logo {
+        font-size: xx-large;
+    }
     .main_news {
         flex-direction: row-reverse;
     }
@@ -102,7 +102,7 @@ footer {
         border: solid;
     }
     .nav_bar {
-        display: flex;
+     display: flex;
      justify-content:center;
      background-color: cornflowerblue
      }   
@@ -120,8 +120,7 @@ footer {
             position: static;
         }
         main {
-            padding: 40px;
-          
+            padding: 40px;         
         }
         .main_news {
             display: flex;
@@ -130,9 +129,7 @@ footer {
         .title_main_news{
             width: 33%;
             padding: 5px;
-         }
-      
-                 
+         }                     
          .desktop_img {
          display: block;
          width: 33%;
@@ -143,8 +140,7 @@ footer {
         }
         .nav_header {
             display: block;
-            display: flex;
-            justify-content: space-between;
+            display: flex;                    
            }
         li {
             display: flex;
