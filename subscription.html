@@ -47,7 +47,7 @@
             <a href="">58°F</a>
         </p>
     </div>
-    <main class="main_subscription">   
+    <main class="main_subscription">
         <form action="" class="form" id="form">
             <div class="column_form_left">
                 <!--User-->
@@ -59,81 +59,92 @@
                     <p class="form_input_error">Debe tener más de 6 letras y al menos un espacio entre medio.
                     </p>
                 </div>
-                 <!--Email-->
+                <!--Email-->
                 <div class="form_group" id="user_group">
-                    <label for="user" class="label_form">User</label>
+                    <label for="email" class="label_form">Email</label>
                     <div class="form_group_input">
-                        <input type="text" class="form_input" name="user" id="user" placeholder="User Name">
+                        <input type="email" class="form_input" name="email" id="email" placeholder="Enter email">
                     </div>
-                    <p class="form_input_error">Debe tener más de 6 letras y al menos un espacio entre medio.
+                    <p class="form_input_error">debe tener un formato de email válido.
+
                     </p>
                 </div>
-                 <!--Constraseña-->
+                <!--Constraseña-->
                 <div class="form_group" id="user_group">
-                    <label for="user" class="label_form">User</label>
+                    <label for="password" class="label_form">Password</label>
                     <div class="form_group_input">
-                        <input type="text" class="form_input" name="user" id="user" placeholder="User Name">
+                        <input type="text" class="form_input" name="password" id="password" placeholder="Password">
                     </div>
-                    <p class="form_input_error">Debe tener más de 6 letras y al menos un espacio entre medio.
+                    <p class="form_input_error">Al menos 8 caracteres, formados por letras y números.
+
                     </p>
                 </div>
-                 <!--Edad-->
+                <!--Edad-->
                 <div class="form_group" id="user_group">
-                    <label for="user" class="label_form">User</label>
+                    <label for="age" class="label_form">Age</label>
                     <div class="form_group_input">
-                        <input type="text" class="form_input" name="user" id="user" placeholder="User Name">
+                        <input type="text" class="form_input" name="age" id="age" placeholder="Age">
                     </div>
-                    <p class="form_input_error">Debe tener más de 6 letras y al menos un espacio entre medio.
+                    <p class="form_input_error">Número entero mayor o igual a 18.
+
                     </p>
                 </div>
-                 <!--Telefono-->
+                <!--Telefono-->
                 <div class="form_group" id="user_group">
-                    <label for="user" class="label_form">User</label>
+                    <label for="telephone" class="label_form">Telephone</label>
                     <div class="form_group_input">
-                        <input type="text" class="form_input" name="user" id="user" placeholder="User Name">
+                        <input type="text" class="form_input" name="telephone" id="telephone"
+                            placeholder="Phone Number">
                     </div>
-                    <p class="form_input_error">Debe tener más de 6 letras y al menos un espacio entre medio.
+                    <p class="form_input_error">Número de al menos 7 dígitos, sin espacios, guiones ni paréntesis.
                     </p>
                 </div>
             </div>
             <!--Direccion-->
             <div class="column_form_right">
                 <div class="form_group" id="user_group">
-                    <label for="user" class="label_form">User</label>
+                    <label for="address" class="label_form">Address</label>
                     <div class="form_group_input">
-                        <input type="text" class="form_input" name="user" id="user" placeholder="User Name">
+                        <input type="text" class="form_input" name="address" id="address" placeholder="Address">
                     </div>
-                    <p class="form_input_error">Debe tener más de 6 letras y al menos un espacio entre medio.
+                    <p class="form_input_error">Al menos 5 caracteres, con letras, números y un espacio en el medio.
                     </p>
                 </div>
-                 <!--Ciudad-->
+                <!--Ciudad-->
                 <div class="form_group" id="user_group">
-                    <label for="user" class="label_form">User</label>
+                    <label for="city" class="label_form">City</label>
                     <div class="form_group_input">
-                        <input type="text" class="form_input" name="user" id="user" placeholder="User Name">
+                        <input type="text" class="form_input" name="city" id="city" placeholder="City">
                     </div>
-                    <p class="form_input_error">Debe tener más de 6 letras y al menos un espacio entre medio.
+                    <p class="form_input_error">Al menos 3 caracteres.
+
                     </p>
                 </div>
-                 <!--Codigo postal-->
+                <!--Codigo postal-->
                 <div class="form_group" id="user_group">
-                    <label for="user" class="label_form">User</label>
+                    <label for="post" class="label_form">Post Number</label>
                     <div class="form_group_input">
-                        <input type="text" class="form_input" name="user" id="user" placeholder="User Name">
+                        <input type="text" class="form_input" name="post" id="post" placeholder="Post Number">
                     </div>
-                    <p class="form_input_error">Debe tener más de 6 letras y al menos un espacio entre medio.
+                    <p class="form_input_error">Al menos 3 caracteres.
+
                     </p>
                 </div>
-                 <!--DNI-->
+                <!--DNI-->
                 <div class="form_group" id="user_group">
-                    <label for="user" class="label_form">User</label>
+                    <label for="dni" class="label_form">Id Number</label>
                     <div class="form_group_input">
-                        <input type="text" class="form_input" name="user" id="user" placeholder="User Name">
+                        <input type="text" class="form_input" name="dni" id="dni" placeholder="Id Number">
                     </div>
-                    <p class="form_input_error">Debe tener más de 6 letras y al menos un espacio entre medio.
+                    <p class="form_input_error">Número de 7 u 8 dígitos.
                     </p>
+                </div>
+                <div class="form_group form_group_button-send">
+                    <button type="submit" class="form_button">SEND!</button>
                 </div>
             </div>
+           
+
         </form>
     </main>
     <footer>
