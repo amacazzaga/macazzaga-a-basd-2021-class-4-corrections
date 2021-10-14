@@ -23,6 +23,7 @@ footer {
     padding: 20px;
     background-color: darkkhaki;
 }
+/* SUBSCRIBE PAGE*/
 
 
 
@@ -54,6 +55,16 @@ footer {
         border: solid;
         margin-right: 10px;
          }
+          /* SUBSCRIBE PAGE*/
+    .main_subscription {
+        display: flex;
+        justify-content: center;
+    }      
+    .form {
+    padding: 40px;    
+    display: flex;
+    flex-direction: row;
+    }
    }
   
 
@@ -99,6 +110,6 @@ footer {
             position: sticky;
             top: 0%;
         }
-    }
- 
-    
+   
+
+} 
