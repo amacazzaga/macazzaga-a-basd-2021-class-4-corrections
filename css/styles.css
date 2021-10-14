@@ -23,6 +23,9 @@ footer {
     padding: 20px;
     background-color: darkkhaki;
 }
+
+
+
 @media only screen and (min-width: 720px) {
     .header_logo {
         font-size: xx-large;
@@ -52,6 +55,8 @@ footer {
         margin-right: 10px;
          }
    }
+  
+
     @media only screen and (min-width: 1200px){
         header{
             position: static;
@@ -95,3 +100,5 @@ footer {
             top: 0%;
         }
     }
+ 
+    
