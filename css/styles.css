@@ -3,7 +3,6 @@ main {
     padding: 20px;
     background-color: cornflowerblue;
 }
-
 .main_news {
     display: flex;
     flex-direction: column;
@@ -27,6 +26,19 @@ footer {
     padding: 10px;
 }
 /* SUBSCRIBE PAGE*/
+.label_form {
+    padding-bottom: 5px;
+    margin: 5px;
+    font-size: large;
+    font-weight: bold;  
+}
+.form_input {
+    padding-top: 5px;
+    border: solid 4px chocolate;
+}
+.form_input_error {
+    font-weight: 600;
+}
 
 
 
