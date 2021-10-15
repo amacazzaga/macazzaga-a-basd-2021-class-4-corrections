@@ -39,6 +39,17 @@ footer {
 .form_input_error {
     font-weight: 600;
 }
+.form_button {
+    font-size: x-large;
+}
+.a_nav_header {
+    border: solid 4px chocolate;
+    font-size: large;
+    font-weight: 700;
+}
+.hidden {
+  visibility: hidden;
+}
 
 
 
