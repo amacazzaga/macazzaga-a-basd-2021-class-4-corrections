@@ -75,3 +75,15 @@ postInput.addEventListener("blur", () => {
 postInput.addEventListener("focus", () => {
   postError.classList.add("hidden");
 });
+/* DNI FIELD */
+var dniInput = document.getElementById("dni");
+var dniError = document.getElementById("dni_error");
+dniInput.addEventListener("blur", () => {
+  var dniValue = dniInput.value;
+  var dniLength = dniValue.length
+  var checkDni = Number(dniValue);
+  console.log(checkDni)
+  if (!(dniLength > 7 && dniLength <= 8 )){
+    dniError.classList.remove("hidden")
+   }
+});
