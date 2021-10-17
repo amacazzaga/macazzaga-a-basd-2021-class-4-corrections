@@ -80,10 +80,26 @@ var dniInput = document.getElementById("dni");
 var dniError = document.getElementById("dni_error");
 dniInput.addEventListener("blur", () => {
   var dniValue = dniInput.value;
-  var dniLength = dniValue.length
+  var dniLength = dniValue.length;
   var checkDni = Number(dniValue);
-  console.log(checkDni)
-  if (!(dniLength > 7 && dniLength <= 8 )){
-    dniError.classList.remove("hidden")
-   }
+  console.log(checkDni);
+  if (!(dniLength > 7 && dniLength <= 8)) {
+    dniError.classList.remove("hidden");
+  }
+});
+dniInput.addEventListener("focus", () => {
+  dniError.classList.add("hidden");
+});
+/* PASSWORD FIELD*/
+var passwordInput = document.getElementById("password");
+var passwordError = document.getElementById("password_error");
+passwordInput.addEventListener("blur", () => {
+  var passwordValue = passwordInput.value;
+  var passwordTest = /^[a-z0-9]{8,50}$/i.test(passwordValue);
+  if (!passwordTest) {
+    passwordError.classList.remove("hidden");
+  }
+});
+passwordInput.addEventListener("focus", () => {
+  postError.classList.add("hidden");
 });
