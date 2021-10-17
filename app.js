@@ -90,6 +90,7 @@ dniInput.addEventListener("blur", () => {
 dniInput.addEventListener("focus", () => {
   dniError.classList.add("hidden");
 });
+////////started to working with simple redex here, just not to loose the chance to learn///
 /* PASSWORD FIELD*/
 var passwordInput = document.getElementById("password");
 var passwordError = document.getElementById("password_error");
@@ -101,5 +102,18 @@ passwordInput.addEventListener("blur", () => {
   }
 });
 passwordInput.addEventListener("focus", () => {
-  postError.classList.add("hidden");
+  passwordError.classList.add("hidden");
+});
+/* TELEPHONE FIELD*/
+var telephoneInput = document.getElementById("telephone");
+var telephoneError = document.getElementById("telephone_error");
+telephoneInput.addEventListener("blur", () => {
+  var telephoneValue = telephoneInput.value;
+  var telephoneTest = /^[0-9]{7,50}$/i.test(telephoneValue);
+  if (!telephoneTest) {
+    telephoneError.classList.remove("hidden");
+  }
+});
+telephoneInput.addEventListener("focus", () => {
+  telephoneError.classList.add("hidden");
 });
