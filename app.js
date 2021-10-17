@@ -117,3 +117,16 @@ telephoneInput.addEventListener("blur", () => {
 telephoneInput.addEventListener("focus", () => {
   telephoneError.classList.add("hidden");
 });
+/*ADDRESS*/
+var addressInput = document.getElementById("address");
+var addressError = document.getElementById("address_error");
+addressInput.addEventListener("blur", () => {
+  var addressValue = addressInput.value;
+  var addressTest = /^[a-z0-9 ]{5,50}$/i.test(addressValue);
+  if (!addressTest) {
+    addressError.classList.remove("hidden");
+  }
+});
+addressInput.addEventListener("focus", () => {
+  addressError.classList.add("hidden");
+});
