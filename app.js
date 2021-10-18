@@ -1,13 +1,13 @@
 /*USER FIELD*/
 var userInput = document.getElementById("user");
 var userError = document.getElementById("user_error");
-var userValue = userInput.value;
-var userValueHasSpace = userValue.includes(" ");
-var userValueLength =
-  userValue.split("").filter((l) => l.toLowerCase().match(/[a-z]/i)).length > 6;
-if (!(userValueHasSpace && userValueLength)) {
-  userError.classList.remove("hidden");
-}
+userInput.addEventListener("blur", () => {
+  var userValue = userInput.value;
+  var userTest = /^[a-z ]{8,15}$/i.test(userValue);
+  if (!userTest) {
+    userError.classList.remove("hidden");
+  }
+});
 userInput.addEventListener("focus", () => {
   userError.classList.add("hidden");
 });
