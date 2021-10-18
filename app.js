@@ -1,25 +1,15 @@
 /*USER FIELD*/
-var userInput = document.getElementById("user"); // aca tomo input del html
-var userError = document.getElementById("user_error"); // aca tomo el id de la etiqueta <p>
-userInput.addEventListener("blur", () => {
-  // espero dos eventos, el primero es blur (perder foco),
-  // el segundo lo que  ejecute la funcion
-  var userValue = userInput.value; /// aca guardo el valor q escribe el usuario
-  var userValueHasSpace = userValue.includes(" "); // devuelve true (si esta el string) or false
-  // la l es cada elemento del split (string)
-  var userValueLength =
-    userValue.split("").filter((l) => l.toLowerCase().match(/[a-z]/i)).length >
-    6;
-
-  //split pasa a un
-  //array!,
-
-  if (!(userValueHasSpace && userValueLength)) {
-    /* si es false*/ userError.classList.remove("hidden"); // remueve la clase hidden, es decir, muestra el mensaje oculto
-  }
-});
+var userInput = document.getElementById("user");
+var userError = document.getElementById("user_error");
+var userValue = userInput.value;
+var userValueHasSpace = userValue.includes(" ");
+var userValueLength =
+  userValue.split("").filter((l) => l.toLowerCase().match(/[a-z]/i)).length > 6;
+if (!(userValueHasSpace && userValueLength)) {
+  userError.classList.remove("hidden");
+}
 userInput.addEventListener("focus", () => {
-  userError.classList.add("hidden"); // aca agrego la clase para ocultar el mensaje
+  userError.classList.add("hidden");
 });
 /*EMAIL FIELD*/
 var emailInput = document.getElementById("email");
@@ -28,7 +18,6 @@ emailInput.addEventListener("blur", () => {
   var emailValue = emailInput.value;
   var emailValid = emailValue.includes("@");
   var emailValidEndsWith = emailValue.endsWith(".com");
-
   if (!(emailValid && emailValidEndsWith)) {
     emailError.classList.remove("hidden");
   }
@@ -63,17 +52,17 @@ cityInput.addEventListener("blur", () => {
 cityInput.addEventListener("focus", () => {
   cityError.classList.add("hidden");
 });
-/*POST FIELD*/
-var postInput = document.getElementById("post");
-var postError = document.getElementById("post_error");
-postInput.addEventListener("blur", () => {
-  var postValue = postInput.value;
-  if (!(postValue.length >= 3)) {
-    postError.classList.remove("hidden");
+/*ZIP FIELD*/
+var zipInput = document.getElementById("zip");
+var zipError = document.getElementById("zip_error");
+zipInput.addEventListener("blur", () => {
+  var zipValue = zipInput.value;
+  if (!(zipValue.length >= 3)) {
+    zipError.classList.remove("hidden");
   }
 });
-postInput.addEventListener("focus", () => {
-  postError.classList.add("hidden");
+zipInput.addEventListener("focus", () => {
+  zipError.classList.add("hidden");
 });
 /* DNI FIELD */
 var dniInput = document.getElementById("dni");
@@ -82,7 +71,6 @@ dniInput.addEventListener("blur", () => {
   var dniValue = dniInput.value;
   var dniLength = dniValue.length;
   var checkDni = Number(dniValue);
-  console.log(checkDni);
   if (!(dniLength > 7 && dniLength <= 8)) {
     dniError.classList.remove("hidden");
   }
@@ -90,13 +78,12 @@ dniInput.addEventListener("blur", () => {
 dniInput.addEventListener("focus", () => {
   dniError.classList.add("hidden");
 });
-////////started to working with simple redex here, just not to loose the chance to learn///
 /* PASSWORD FIELD*/
 var passwordInput = document.getElementById("password");
 var passwordError = document.getElementById("password_error");
 passwordInput.addEventListener("blur", () => {
   var passwordValue = passwordInput.value;
-  var passwordTest = /^[a-z0-9]{8,50}$/i.test(passwordValue);
+  var passwordTest = /^[a-z0-9]{8,15}$/i.test(passwordValue);
   if (!passwordTest) {
     passwordError.classList.remove("hidden");
   }
@@ -109,7 +96,7 @@ var telephoneInput = document.getElementById("telephone");
 var telephoneError = document.getElementById("telephone_error");
 telephoneInput.addEventListener("blur", () => {
   var telephoneValue = telephoneInput.value;
-  var telephoneTest = /^[0-9]{7,50}$/i.test(telephoneValue);
+  var telephoneTest = /^[0-9]{7,12}$/i.test(telephoneValue);
   if (!telephoneTest) {
     telephoneError.classList.remove("hidden");
   }
@@ -122,11 +109,42 @@ var addressInput = document.getElementById("address");
 var addressError = document.getElementById("address_error");
 addressInput.addEventListener("blur", () => {
   var addressValue = addressInput.value;
-  var addressTest = /^[a-z0-9 ]{5,50}$/i.test(addressValue);
+  var addressTest = /^[a-z0-9 ]{5,20}$/i.test(addressValue);
   if (!addressTest) {
     addressError.classList.remove("hidden");
   }
 });
 addressInput.addEventListener("focus", () => {
   addressError.classList.add("hidden");
+});
+/*BUTTON*/
+document.getElementById("button_send").addEventListener("click", () => {
+  if (addressError.classList.contains("hidden")&& addressInput.value) {
+    window.alert("Address : your subcsription was succesful  :"+" "+addressInput.value)
+  }else window.alert("Address: your subscription fail at :"+ " " +addressError.innerHTML)
+  if (telephoneError.classList.contains("hidden")&& telephoneInput.value) {
+    window.alert("telephone : your subcsription was succesful  :"+" "+telephoneInput.value)
+  }else window.alert("telephone: your subscription fail at :"+ " " +telephoneError.innerHTML)
+  if (userError.classList.contains("hidden")&& userInput.value) {
+    window.alert("user : your subcsription was succesful  :"+" "+userInput.value)
+  }else window.alert("user: your subscription fail at :"+ " " +userError.innerHTML)
+  if (emailError.classList.contains("hidden")&& emailInput.value) {
+    window.alert("email : your subcsription was succesful  :"+" "+emailInput.value)
+  }else window.alert("email: your subscription fail at :"+ " " +emailError.innerHTML)
+  if (passwordError.classList.contains("hidden")&& passwordInput.value) {
+    window.alert("password : your subcsription was succesful  :"+" "+passwordInput.value)
+  }else window.alert("password: your subscription fail at :"+ " " +passwordError.innerHTML)
+  if (dniError.classList.contains("hidden")&& dniInput.value) {
+    window.alert("dni : your subcsription was succesful  :"+" "+dniInput.value)
+  }else window.alert("dni: your subscription fail at :"+ " " +dniError.innerHTML)
+  if (cityError.classList.contains("hidden")&& cityInput.value) {
+    window.alert("city : your subcsription was succesful  :"+" "+cityInput.value)
+  }else window.alert("city: your subscription fail at :"+ " " +cityError.innerHTML)
+  if (zipError.classList.contains("hidden")&& zipInput.value) {
+    window.alert("zip : your subcsription was succesful  :"+" "+zipInput.value)
+  }else window.alert("zip: your subscription fail at :"+ " " +zipError.innerHTML)
+  if (ageError.classList.contains("hidden")&& ageInput.value) {
+    window.alert("age : your subcsription was succesful  :"+" "+ageInput.value)
+  }else window.alert("age: your subscription fail at :"+ " " +ageError.innerHTML)
+
 });
