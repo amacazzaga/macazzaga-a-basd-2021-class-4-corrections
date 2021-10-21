@@ -1,15 +1,15 @@
 /*USER FIELD*/
-var userInput = document.getElementById("user");
-var userError = document.getElementById("user_error");
-userInput.addEventListener("blur", () => {
-  var userValue = userInput.value;
-  var userTest = /^[a-z ]{8,15}$/i.test(userValue);
-  if (!userTest) {
-    userError.classList.remove("hidden");
+var nameInput = document.getElementById("name");
+var nameError = document.getElementById("name_error");
+nameInput.addEventListener("blur", () => {
+  var nameValue = nameInput.value;
+  var nameTest = /^[a-z ]{8,25}$/i.test(nameValue);
+  if (!nameTest) {
+    nameError.classList.remove("hidden");
   }
 });
-userInput.addEventListener("focus", () => {
-  userError.classList.add("hidden");
+nameInput.addEventListener("focus", () => {
+  nameError.classList.add("hidden");
 });
 /*EMAIL FIELD*/
 var emailInput = document.getElementById("email");
@@ -117,76 +117,39 @@ addressInput.addEventListener("blur", () => {
 addressInput.addEventListener("focus", () => {
   addressError.classList.add("hidden");
 });
+
 /*BUTTON*/
 document.getElementById("button_send").addEventListener("click", () => {
-  if (addressError.classList.contains("hidden") && addressInput.value) {
-    window.alert(
-      "Address : your subcsription was succesful  :" + " " + addressInput.value
-    );
-  } else
-    window.alert(
-      "Address: your subscription fail at :" + " " + addressError.innerHTML
-    );
-  if (telephoneError.classList.contains("hidden") && telephoneInput.value) {
-    window.alert(
-      "telephone : your subcsription was succesful  :" +
-        " " +
-        telephoneInput.value
-    );
-  } else
-    window.alert(
-      "telephone: your subscription fail at :" + " " + telephoneError.innerHTML
-    );
-  if (userError.classList.contains("hidden") && userInput.value) {
-    window.alert(
-      "user : your subcsription was succesful  :" + " " + userInput.value
-    );
-  } else
-    window.alert(
-      "user: your subscription fail at :" + " " + userError.innerHTML
-    );
-  if (emailError.classList.contains("hidden") && emailInput.value) {
-    window.alert(
-      "email : your subcsription was succesful  :" + " " + emailInput.value
-    );
-  } else
-    window.alert(
-      "email: your subscription fail at :" + " " + emailError.innerHTML
-    );
-  if (passwordError.classList.contains("hidden") && passwordInput.value) {
-    window.alert(
-      "password : your subcsription was succesful  :" +
-        " " +
-        passwordInput.value
-    );
-  } else
-    window.alert(
-      "password: your subscription fail at :" + " " + passwordError.innerHTML
-    );
-  if (dniError.classList.contains("hidden") && dniInput.value) {
-    window.alert(
-      "dni : your subcsription was succesful  :" + " " + dniInput.value
-    );
-  } else
-    window.alert("dni: your subscription fail at :" + " " + dniError.innerHTML);
-  if (cityError.classList.contains("hidden") && cityInput.value) {
-    window.alert(
-      "city : your subcsription was succesful  :" + " " + cityInput.value
-    );
-  } else
-    window.alert(
-      "city: your subscription fail at :" + " " + cityError.innerHTML
-    );
-  if (zipError.classList.contains("hidden") && zipInput.value) {
-    window.alert(
-      "zip : your subcsription was succesful  :" + " " + zipInput.value
-    );
-  } else
-    window.alert("zip: your subscription fail at :" + " " + zipError.innerHTML);
-  if (ageError.classList.contains("hidden") && ageInput.value) {
-    window.alert(
-      "age : your subcsription was succesful  :" + " " + ageInput.value
-    );
-  } else
-    window.alert("age: your subscription fail at :" + " " + ageError.innerHTML);
+  var myArrInputList = [
+    addressInput,
+    telephoneInput,
+    passwordInput,
+    dniInput,
+    zipInput,
+    cityInput,
+    ageInput,
+    emailInput,
+    nameInput,
+  ];
+
+  var ArrError = myArrInputList.filter((i) => {
+    var errorRelated = document.getElementById(i.id + "_error");
+    if ((!errorRelated.classList.contains("hidden") && i.value) || !i.value) {
+      return true;
+    } else return false;
+  });
+  if (ArrError.length > 0) {
+    window.alert("there is an error, please, check your information field");
+  } else {
+    var baseUrl = "http://curso-dev-2021.herokuapp.com/newsletter?";
+    var queryParams = myArrInputList
+      .map((i) => {
+        return i.id + "=" + i.value;
+      })
+      .join("&");
+    fetch(baseUrl + queryParams)
+      .then((res) => res.json())
+      .then((dat) => console.log(dat))
+      .catch((err) => console.log(err));
+  }
 });
