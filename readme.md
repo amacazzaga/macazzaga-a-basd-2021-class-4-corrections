@@ -1,6 +1,6 @@
 # Become a Software Developer 🚀
 
-## Problemática semanal 05 subsrciption page
+## Problemática semanal 06 send data to server
 
 ## Author 🖋️
 

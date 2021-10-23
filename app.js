@@ -1,3 +1,6 @@
+window.onload = function(){ 
+
+
 /*USER FIELD*/
 var nameInput = document.getElementById("name");
 var nameError = document.getElementById("name_error");
@@ -117,6 +120,8 @@ addressInput.addEventListener("blur", () => {
 addressInput.addEventListener("focus", () => {
   addressError.classList.add("hidden");
 });
+// GET MODAL
+var modal = document.getElementById("myModal");
 
 /*BUTTON*/
 document.getElementById("button_send").addEventListener("click", () => {
@@ -132,13 +137,16 @@ document.getElementById("button_send").addEventListener("click", () => {
     nameInput,
   ];
 
-  var ArrError = myArrInputList.filter((i) => {
-    var errorRelated = document.getElementById(i.id + "_error");
+  var arrError = myArrInputList.filter((i) => {
+    //filter crea un arr nuevo
+    var errorRelated = document.getElementById(i.id + "_error"); // id: _error como propiedad
+    // de los inputs
     if ((!errorRelated.classList.contains("hidden") && i.value) || !i.value) {
-      return true;
+      return true; /*queda algo en el array, es como retornar ArrError*/
     } else return false;
   });
-  if (ArrError.length > 0) {
+  if (arrError.length > 0) {
+    /*si queda algo, hay un error*/
     window.alert("there is an error, please, check your information field");
   } else {
     var baseUrl = "http://curso-dev-2021.herokuapp.com/newsletter?";
@@ -148,8 +156,20 @@ document.getElementById("button_send").addEventListener("click", () => {
       })
       .join("&");
     fetch(baseUrl + queryParams)
-      .then((res) => res.json())
-      .then((dat) => console.log(dat))
+      .then((res) => {
+        if (res.status === 200){
+         return res.json()
+        }
+      })
+      .then((dat) => {
+        modal.style.display = "block";/*MODAL SHOWS*/
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          } /* CLICK OUTSIDE, CLOSE THE MODAL*/
+        }
+      }) 
       .catch((err) => console.log(err));
   }
 });
+}

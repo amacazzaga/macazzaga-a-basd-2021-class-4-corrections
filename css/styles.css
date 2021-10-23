@@ -49,6 +49,23 @@ footer {
 .hidden {
   visibility: hidden;
 }
+.modal {
+  display: block; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  color: aliceblue;
+  text-align: center;
+  font-size: xx-large;
+  z-index: 1; /* Sit on top */
+  padding-top: 80px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 50%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(189, 13, 13); /* Fallback color */
+ 
+}
+
 @media only screen and (min-width: 720px) {
   .header_logo {
     font-size: xx-large;
