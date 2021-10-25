@@ -153,7 +153,7 @@ window.onload = function () {
       /*si queda algo, hay un error*/
       window.alert("there is an error, please, check your information field");
     } else {
-      var baseUrl = "http://curso-dev-2021.herokuapp.com/newsletter?";
+      var baseUrl = "https://curso-dev-2021.herokuapp.com/newsletter?";
       var queryParams = myArrInputList
         .map((i) => {
           return i.id + "=" + i.value;
