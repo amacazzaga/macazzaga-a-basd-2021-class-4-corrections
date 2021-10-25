@@ -186,16 +186,16 @@ window.onload = function () {
         .then((res) => {
           if (res.status === 200) {
             return res.json();
-          }
+          } else throw Error(res.status);
         })
         .then((dat) => {
           modal.style.display = "block"; /*MODAL SHOWS*/
-            var msg = "<ul>";
-            for (var i = 0; i < myNameFields.length; i++) {
-              msg += `<li>${myNameFields[i]}:${values[i]}</li>`;
-            }
-            msg += "</ul>";
-            modal.innerHTML = msg;  
+          var msg = "<ul>";
+          for (var i = 0; i < myNameFields.length; i++) {
+            msg += `<li>${myNameFields[i]}:${values[i]}</li>`;
+          }
+          msg += "</ul>";
+          modal.innerHTML = msg;
         })
 
         .catch((err) => console.log(err));
