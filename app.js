@@ -156,7 +156,7 @@ document.getElementById("button_send").addEventListener("click", () => {
       .map((i) => {
         return i.id + "=" + i.value;
       })
-      .join("&");/*variable y valor van separados por &*/
+      .join("&"); /*variable y valor van separados por &*/
     ////FETCH///////
     var myNameFields = [
       "Address",
@@ -204,50 +204,50 @@ document.getElementById("button_send").addEventListener("click", () => {
         window.localStorage.setItem("password", passwordInput.value);
         window.localStorage.setItem("age", ageInput.value);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        modal.style.display = "block";
+        modal.innerHTML= "and error has been found, please try later"
+      });
   }
 });
 
-  var storageName = window.localStorage.getItem("name");
-  if (storageName) {
-    nameInput.value = storageName;
-  }
-  var storagEmail = window.localStorage.getItem("email");
-  if (storagEmail) {
-    emailInput.value = storagEmail;
-  }
-  var storageAge = window.localStorage.getItem("age");
-  if (storageAge) {
-    ageInput.value = storageAge;
-  }
-  var storagePass = window.localStorage.getItem("password");
-  if (storagePass) {
-    passwordInput.value = storagePass;
-  }
-  var storageId = window.localStorage.getItem("id");
-  if (storageId) {
-    dniInput.value = storageId;
-  }
-  var storageName = window.localStorage.getItem("name");
-  if (storageName) {
-    nameInput.value = storageName;
-  }
-  var storageZip = window.localStorage.getItem("zip");
-  if (storageZip) {
-    zipInput.value = storageZip;
-  }
-  var storageTelephone = window.localStorage.getItem("telephone");
-  if (storageTelephone) {
-    telephoneInput.value = storageTelephone;
-  }
-  var storageAddress = window.localStorage.getItem("address");
-  if (storageAddress) {
-    addressInput.value = storageAddress;
-  }
-  var storageCity = window.localStorage.getItem("city");
-  if (storageCity) {
-    cityInput.value = storageCity;
-  }
-
- 
-
+var storageName = window.localStorage.getItem("name");
+if (storageName) {
+  nameInput.value = storageName;
+}
+var storagEmail = window.localStorage.getItem("email");
+if (storagEmail) {
+  emailInput.value = storagEmail;
+}
+var storageAge = window.localStorage.getItem("age");
+if (storageAge) {
+  ageInput.value = storageAge;
+}
+var storagePass = window.localStorage.getItem("password");
+if (storagePass) {
+  passwordInput.value = storagePass;
+}
+var storageId = window.localStorage.getItem("id");
+if (storageId) {
+  dniInput.value = storageId;
+}
+var storageName = window.localStorage.getItem("name");
+if (storageName) {
+  nameInput.value = storageName;
+}
+var storageZip = window.localStorage.getItem("zip");
+if (storageZip) {
+  zipInput.value = storageZip;
+}
+var storageTelephone = window.localStorage.getItem("telephone");
+if (storageTelephone) {
+  telephoneInput.value = storageTelephone;
+}
+var storageAddress = window.localStorage.getItem("address");
+if (storageAddress) {
+  addressInput.value = storageAddress;
+}
+var storageCity = window.localStorage.getItem("city");
+if (storageCity) {
+  cityInput.value = storageCity;
+}
