@@ -6,19 +6,18 @@ var emailInput = document.getElementById("email");
 var emailError = document.getElementById("email_error");
 /*DATE*/
 //EMAIL///
-function isValidEmail (emailValue){
-   var emailValid = emailValue.includes("@");
-   var emailValidEndsWith = emailValue.endsWith(".com");
-   return (emailValid&&emailValidEndsWith)
+function isValidEmail(emailValue) {
+  var emailValid = emailValue.includes("@");
+  var emailValidEndsWith = emailValue.endsWith(".com");
+  return emailValid && emailValidEndsWith;
 }
 ////NAME////
 function isValidName(nameValue) {
   return /^[a-z ]{8,25}$/i.test(nameValue);
 }
 ///GRAND VALIDATOR FUNCTION////
-function addListenersInput(input,errorField,isValid) {
-
- input.addEventListener("blur", () => {
+function addListenersInput(input, errorField, isValid) {
+  input.addEventListener("blur", () => {
     var test = isValid(input.value);
     if (!test) {
       errorField.classList.remove("hidden");
@@ -28,14 +27,8 @@ function addListenersInput(input,errorField,isValid) {
     errorField.classList.add("hidden");
   });
 }
-addListenersInput(nameInput,nameError,isValidName);
-addListenersInput(emailInput,emailError,isValidEmail);
-
-
-  
-
-
-
+addListenersInput(nameInput, nameError, isValidName);
+addListenersInput(emailInput, emailError, isValidEmail);
 
 /* AGE FIELD*/
 var ageInput = document.getElementById("age");
@@ -136,7 +129,6 @@ window.onclick = function (e) {
     modal.style.display = "none";
   }
 };
-
 /*BUTTON*/
 document.getElementById("button_send").addEventListener("click", () => {
   var myArrInputList = [
@@ -164,7 +156,7 @@ document.getElementById("button_send").addEventListener("click", () => {
       .map((i) => {
         return i.id + "=" + i.value;
       })
-      .join("&");
+      .join("&");/*variable y valor van separados por &*/
     ////FETCH///////
     var myNameFields = [
       "Address",
@@ -203,11 +195,59 @@ document.getElementById("button_send").addEventListener("click", () => {
         msg += "</ul>";
         modal.innerHTML = msg;
         window.localStorage.setItem("name", nameInput.value);
+        window.localStorage.setItem("email", emailInput.value);
+        window.localStorage.setItem("address", addressInput.value);
+        window.localStorage.setItem("city", cityInput.value);
+        window.localStorage.setItem("zip", zipInput.value);
+        window.localStorage.setItem("id", dniInput.value);
+        window.localStorage.setItem("telephone", telephoneInput.value);
+        window.localStorage.setItem("password", passwordInput.value);
+        window.localStorage.setItem("age", ageInput.value);
       })
       .catch((err) => console.log(err));
   }
 });
-var storageName = window.localStorage.getItem("name");
-if (storageName) {
-  nameInput.value = storageName;
-}
+
+  var storageName = window.localStorage.getItem("name");
+  if (storageName) {
+    nameInput.value = storageName;
+  }
+  var storagEmail = window.localStorage.getItem("email");
+  if (storagEmail) {
+    emailInput.value = storagEmail;
+  }
+  var storageAge = window.localStorage.getItem("age");
+  if (storageAge) {
+    ageInput.value = storageAge;
+  }
+  var storagePass = window.localStorage.getItem("password");
+  if (storagePass) {
+    passwordInput.value = storagePass;
+  }
+  var storageId = window.localStorage.getItem("id");
+  if (storageId) {
+    dniInput.value = storageId;
+  }
+  var storageName = window.localStorage.getItem("name");
+  if (storageName) {
+    nameInput.value = storageName;
+  }
+  var storageZip = window.localStorage.getItem("zip");
+  if (storageZip) {
+    zipInput.value = storageZip;
+  }
+  var storageTelephone = window.localStorage.getItem("telephone");
+  if (storageTelephone) {
+    telephoneInput.value = storageTelephone;
+  }
+  var storageAddress = window.localStorage.getItem("address");
+  if (storageAddress) {
+    addressInput.value = storageAddress;
+  }
+  var storageCity = window.localStorage.getItem("city");
+  if (storageCity) {
+    cityInput.value = storageCity;
+  }
+
+ 
+
