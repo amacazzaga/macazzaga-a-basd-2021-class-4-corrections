@@ -1,30 +1,42 @@
 /*USER FIELD*/
 var nameInput = document.getElementById("name");
+var nameValue = nameInput.value;
 var nameError = document.getElementById("name_error");
-nameInput.addEventListener("blur", () => {
-  var nameValue = nameInput.value;
-  var nameTest = /^[a-z ]{8,25}$/i.test(nameValue);
-  if (!nameTest) {
-    nameError.classList.remove("hidden");
-  }
-});
-nameInput.addEventListener("focus", () => {
-  nameError.classList.add("hidden");
-});
-/*EMAIL FIELD*/
 var emailInput = document.getElementById("email");
 var emailError = document.getElementById("email_error");
-emailInput.addEventListener("blur", () => {
-  var emailValue = emailInput.value;
-  var emailValid = emailValue.includes("@");
-  var emailValidEndsWith = emailValue.endsWith(".com");
-  if (!(emailValid && emailValidEndsWith)) {
-    emailError.classList.remove("hidden");
-  }
-});
-emailInput.addEventListener("focus", () => {
-  emailError.classList.add("hidden");
-});
+/*DATE*/
+//EMAIL///
+function isValidEmail (emailValue){
+   var emailValid = emailValue.includes("@");
+   var emailValidEndsWith = emailValue.endsWith(".com");
+   return (emailValid&&emailValidEndsWith)
+}
+////NAME////
+function isValidName(nameValue) {
+  return /^[a-z ]{8,25}$/i.test(nameValue);
+}
+///GRAND VALIDATOR FUNCTION////
+function addListenersInput(input,errorField,isValid) {
+
+ input.addEventListener("blur", () => {
+    var test = isValid(input.value);
+    if (!test) {
+      errorField.classList.remove("hidden");
+    }
+  });
+  input.addEventListener("focus", () => {
+    errorField.classList.add("hidden");
+  });
+}
+addListenersInput(nameInput,nameError,isValidName);
+addListenersInput(emailInput,emailError,isValidEmail);
+
+
+  
+
+
+
+
 /* AGE FIELD*/
 var ageInput = document.getElementById("age");
 var ageError = document.getElementById("age_error");
@@ -182,7 +194,7 @@ document.getElementById("button_send").addEventListener("click", () => {
           return res.json();
         } else throw Error(res.status);
       })
-      .then((dat) => {
+      .then(() => {
         modal.style.display = "block"; /*MODAL SHOWS*/
         var msg = "<ul>";
         for (var i = 0; i < myNameFields.length; i++) {
@@ -190,8 +202,12 @@ document.getElementById("button_send").addEventListener("click", () => {
         }
         msg += "</ul>";
         modal.innerHTML = msg;
+        window.localStorage.setItem("name", nameInput.value);
       })
       .catch((err) => console.log(err));
   }
 });
-
+var storageName = window.localStorage.getItem("name");
+if (storageName) {
+  nameInput.value = storageName;
+}
