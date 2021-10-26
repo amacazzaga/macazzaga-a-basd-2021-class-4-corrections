@@ -180,7 +180,7 @@ document.getElementById("button_send").addEventListener("click", () => {
       emailInput.value,
       nameInput.value,
     ];
-    fetch(baseUrl + queryParams)
+    fetch(baseUrl + queryParams )
       .then((res) => {
         if (res.status === 200) {
           return res.json();
@@ -206,7 +206,8 @@ document.getElementById("button_send").addEventListener("click", () => {
       })
       .catch((err) => {
         modal.style.display = "block";
-        modal.innerHTML= "and error has been found, please try later"
+        var errorText = " We sorry, an error has been found, please try later..."
+        modal.innerHTML += errorText.fontcolor("white")
       });
   }
 });
